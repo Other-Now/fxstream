@@ -1,0 +1,417 @@
+# JMH version: 1.37
+# VM version: JDK 21.0.12.1, OpenJDK 64-Bit Server VM, 21.0.12.1+1-LTS
+# VM invoker: D:\self_projects\.tools\jdk-21.0.12.1+1\bin\java.exe
+# VM options: -Xmx1g
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.fxstream.bench.jmh.TickPathBench.bookRecompute
+# Parameters: (lps = 4)
+
+# Run progress: 0.00% complete, ETA 00:00:48
+# Fork: 1 of 1
+# Warmup Iteration   1: 26.371 ns/op
+# Warmup Iteration   2: 26.183 ns/op
+# Warmup Iteration   3: 27.061 ns/op
+Iteration   1: 26.560 ns/op
+                 gc.alloc.rate:      0.006 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   2: 26.944 ns/op
+                 gc.alloc.rate:      0.006 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   3: 26.354 ns/op
+                 gc.alloc.rate:      0.006 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   4: 26.189 ns/op
+                 gc.alloc.rate:      0.006 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   5: 27.105 ns/op
+                 gc.alloc.rate:      0.007 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+
+
+Result "com.fxstream.bench.jmh.TickPathBench.bookRecompute":
+  26.631 ±(99.9%) 1.492 ns/op [Average]
+  (min, avg, max) = (26.189, 26.631, 27.105), stdev = 0.387
+  CI (99.9%): [25.139, 28.122] (assumes normal distribution)
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.bookRecompute:gc.alloc.rate":
+  0.006 ±(99.9%) 0.001 MB/sec [Average]
+  (min, avg, max) = (0.006, 0.006, 0.007), stdev = 0.001
+  CI (99.9%): [0.006, 0.007] (assumes normal distribution)
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.bookRecompute:gc.alloc.rate.norm":
+  ≈ 10⁻⁴ B/op
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.bookRecompute:gc.count":
+  ≈ 0 counts
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.12.1, OpenJDK 64-Bit Server VM, 21.0.12.1+1-LTS
+# VM invoker: D:\self_projects\.tools\jdk-21.0.12.1+1\bin\java.exe
+# VM options: -Xmx1g
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.fxstream.bench.jmh.TickPathBench.bookRecompute
+# Parameters: (lps = 8)
+
+# Run progress: 16.67% complete, ETA 00:00:42
+# Fork: 1 of 1
+# Warmup Iteration   1: 35.248 ns/op
+# Warmup Iteration   2: 31.956 ns/op
+# Warmup Iteration   3: 36.544 ns/op
+Iteration   1: 33.924 ns/op
+                 gc.alloc.rate:      0.006 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   2: 34.139 ns/op
+                 gc.alloc.rate:      0.007 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   3: 34.696 ns/op
+                 gc.alloc.rate:      0.007 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   4: 35.670 ns/op
+                 gc.alloc.rate:      0.006 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   5: 35.358 ns/op
+                 gc.alloc.rate:      0.006 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+
+
+Result "com.fxstream.bench.jmh.TickPathBench.bookRecompute":
+  34.757 ±(99.9%) 2.903 ns/op [Average]
+  (min, avg, max) = (33.924, 34.757, 35.670), stdev = 0.754
+  CI (99.9%): [31.854, 37.660] (assumes normal distribution)
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.bookRecompute:gc.alloc.rate":
+  0.006 ±(99.9%) 0.001 MB/sec [Average]
+  (min, avg, max) = (0.006, 0.006, 0.007), stdev = 0.001
+  CI (99.9%): [0.006, 0.007] (assumes normal distribution)
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.bookRecompute:gc.alloc.rate.norm":
+  ≈ 10⁻⁴ B/op
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.bookRecompute:gc.count":
+  ≈ 0 counts
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.12.1, OpenJDK 64-Bit Server VM, 21.0.12.1+1-LTS
+# VM invoker: D:\self_projects\.tools\jdk-21.0.12.1+1\bin\java.exe
+# VM options: -Xmx1g
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.fxstream.bench.jmh.TickPathBench.engineTick
+# Parameters: (lps = 4)
+
+# Run progress: 33.33% complete, ETA 00:00:33
+# Fork: 1 of 1
+# Warmup Iteration   1: 77.753 ns/op
+# Warmup Iteration   2: 79.291 ns/op
+# Warmup Iteration   3: 75.287 ns/op
+Iteration   1: 75.977 ns/op
+                 gc.alloc.rate:      0.006 MB/sec
+                 gc.alloc.rate.norm: 0.001 B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   2: 75.514 ns/op
+                 gc.alloc.rate:      0.006 MB/sec
+                 gc.alloc.rate.norm: 0.001 B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   3: 76.111 ns/op
+                 gc.alloc.rate:      0.007 MB/sec
+                 gc.alloc.rate.norm: 0.001 B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   4: 78.080 ns/op
+                 gc.alloc.rate:      0.006 MB/sec
+                 gc.alloc.rate.norm: 0.001 B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   5: 77.171 ns/op
+                 gc.alloc.rate:      0.007 MB/sec
+                 gc.alloc.rate.norm: 0.001 B/op
+                 gc.count:           ≈ 0 counts
+
+
+
+Result "com.fxstream.bench.jmh.TickPathBench.engineTick":
+  76.571 ±(99.9%) 4.000 ns/op [Average]
+  (min, avg, max) = (75.514, 76.571, 78.080), stdev = 1.039
+  CI (99.9%): [72.570, 80.571] (assumes normal distribution)
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.engineTick:gc.alloc.rate":
+  0.007 ±(99.9%) 0.001 MB/sec [Average]
+  (min, avg, max) = (0.006, 0.007, 0.007), stdev = 0.001
+  CI (99.9%): [0.006, 0.007] (assumes normal distribution)
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.engineTick:gc.alloc.rate.norm":
+  0.001 ±(99.9%) 0.001 B/op [Average]
+  (min, avg, max) = (0.001, 0.001, 0.001), stdev = 0.001
+  CI (99.9%): [≈ 10⁻³, 0.001] (assumes normal distribution)
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.engineTick:gc.count":
+  ≈ 0 counts
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.12.1, OpenJDK 64-Bit Server VM, 21.0.12.1+1-LTS
+# VM invoker: D:\self_projects\.tools\jdk-21.0.12.1+1\bin\java.exe
+# VM options: -Xmx1g
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.fxstream.bench.jmh.TickPathBench.engineTick
+# Parameters: (lps = 8)
+
+# Run progress: 50.00% complete, ETA 00:00:25
+# Fork: 1 of 1
+# Warmup Iteration   1: 85.233 ns/op
+# Warmup Iteration   2: 82.870 ns/op
+# Warmup Iteration   3: 81.900 ns/op
+Iteration   1: 81.787 ns/op
+                 gc.alloc.rate:      0.007 MB/sec
+                 gc.alloc.rate.norm: 0.001 B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   2: 81.539 ns/op
+                 gc.alloc.rate:      0.006 MB/sec
+                 gc.alloc.rate.norm: 0.001 B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   3: 81.321 ns/op
+                 gc.alloc.rate:      0.007 MB/sec
+                 gc.alloc.rate.norm: 0.001 B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   4: 81.997 ns/op
+                 gc.alloc.rate:      0.007 MB/sec
+                 gc.alloc.rate.norm: 0.001 B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   5: 83.309 ns/op
+                 gc.alloc.rate:      0.006 MB/sec
+                 gc.alloc.rate.norm: 0.001 B/op
+                 gc.count:           ≈ 0 counts
+
+
+
+Result "com.fxstream.bench.jmh.TickPathBench.engineTick":
+  81.991 ±(99.9%) 3.003 ns/op [Average]
+  (min, avg, max) = (81.321, 81.991, 83.309), stdev = 0.780
+  CI (99.9%): [78.987, 84.994] (assumes normal distribution)
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.engineTick:gc.alloc.rate":
+  0.007 ±(99.9%) 0.001 MB/sec [Average]
+  (min, avg, max) = (0.006, 0.007, 0.007), stdev = 0.001
+  CI (99.9%): [0.006, 0.007] (assumes normal distribution)
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.engineTick:gc.alloc.rate.norm":
+  0.001 ±(99.9%) 0.001 B/op [Average]
+  (min, avg, max) = (0.001, 0.001, 0.001), stdev = 0.001
+  CI (99.9%): [0.001, 0.001] (assumes normal distribution)
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.engineTick:gc.count":
+  ≈ 0 counts
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.12.1, OpenJDK 64-Bit Server VM, 21.0.12.1+1-LTS
+# VM invoker: D:\self_projects\.tools\jdk-21.0.12.1+1\bin\java.exe
+# VM options: -Xmx1g
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.fxstream.bench.jmh.TickPathBench.ringRoundTrip
+# Parameters: (lps = 4)
+
+# Run progress: 66.67% complete, ETA 00:00:16
+# Fork: 1 of 1
+# Warmup Iteration   1: 11.726 ns/op
+# Warmup Iteration   2: 11.719 ns/op
+# Warmup Iteration   3: 11.222 ns/op
+Iteration   1: 11.902 ns/op
+                 gc.alloc.rate:      0.007 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   2: 11.846 ns/op
+                 gc.alloc.rate:      0.007 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   3: 11.979 ns/op
+                 gc.alloc.rate:      0.006 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   4: 11.610 ns/op
+                 gc.alloc.rate:      0.007 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   5: 11.423 ns/op
+                 gc.alloc.rate:      0.007 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+
+
+Result "com.fxstream.bench.jmh.TickPathBench.ringRoundTrip":
+  11.752 ±(99.9%) 0.885 ns/op [Average]
+  (min, avg, max) = (11.423, 11.752, 11.979), stdev = 0.230
+  CI (99.9%): [10.867, 12.637] (assumes normal distribution)
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.ringRoundTrip:gc.alloc.rate":
+  0.007 ±(99.9%) 0.001 MB/sec [Average]
+  (min, avg, max) = (0.006, 0.007, 0.007), stdev = 0.001
+  CI (99.9%): [0.006, 0.007] (assumes normal distribution)
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.ringRoundTrip:gc.alloc.rate.norm":
+  ≈ 10⁻⁴ B/op
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.ringRoundTrip:gc.count":
+  ≈ 0 counts
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.12.1, OpenJDK 64-Bit Server VM, 21.0.12.1+1-LTS
+# VM invoker: D:\self_projects\.tools\jdk-21.0.12.1+1\bin\java.exe
+# VM options: -Xmx1g
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.fxstream.bench.jmh.TickPathBench.ringRoundTrip
+# Parameters: (lps = 8)
+
+# Run progress: 83.33% complete, ETA 00:00:08
+# Fork: 1 of 1
+# Warmup Iteration   1: 11.931 ns/op
+# Warmup Iteration   2: 11.565 ns/op
+# Warmup Iteration   3: 11.318 ns/op
+Iteration   1: 11.366 ns/op
+                 gc.alloc.rate:      0.006 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   2: 12.013 ns/op
+                 gc.alloc.rate:      0.006 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   3: 11.508 ns/op
+                 gc.alloc.rate:      0.006 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   4: 11.356 ns/op
+                 gc.alloc.rate:      0.006 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   5: 11.634 ns/op
+                 gc.alloc.rate:      0.007 MB/sec
+                 gc.alloc.rate.norm: ≈ 10⁻⁴ B/op
+                 gc.count:           ≈ 0 counts
+
+
+
+Result "com.fxstream.bench.jmh.TickPathBench.ringRoundTrip":
+  11.575 ±(99.9%) 1.040 ns/op [Average]
+  (min, avg, max) = (11.356, 11.575, 12.013), stdev = 0.270
+  CI (99.9%): [10.535, 12.615] (assumes normal distribution)
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.ringRoundTrip:gc.alloc.rate":
+  0.006 ±(99.9%) 0.001 MB/sec [Average]
+  (min, avg, max) = (0.006, 0.006, 0.007), stdev = 0.001
+  CI (99.9%): [0.006, 0.007] (assumes normal distribution)
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.ringRoundTrip:gc.alloc.rate.norm":
+  ≈ 10⁻⁴ B/op
+
+Secondary result "com.fxstream.bench.jmh.TickPathBench.ringRoundTrip:gc.count":
+  ≈ 0 counts
+
+
+# Run complete. Total time: 00:00:50
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+extra caution when trusting the results, look into the generated code to check the benchmark still
+works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+different JVMs are already problematic, the performance difference caused by different Blackhole
+modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+
+Benchmark                                       (lps)  Mode  Cnt   Score    Error   Units
+TickPathBench.bookRecompute                         4  avgt    5  26.631 ±  1.492   ns/op
+TickPathBench.bookRecompute:gc.alloc.rate           4  avgt    5   0.006 ±  0.001  MB/sec
+TickPathBench.bookRecompute:gc.alloc.rate.norm      4  avgt    5  ≈ 10⁻⁴             B/op
+TickPathBench.bookRecompute:gc.count                4  avgt    5     ≈ 0           counts
+TickPathBench.bookRecompute                         8  avgt    5  34.757 ±  2.903   ns/op
+TickPathBench.bookRecompute:gc.alloc.rate           8  avgt    5   0.006 ±  0.001  MB/sec
+TickPathBench.bookRecompute:gc.alloc.rate.norm      8  avgt    5  ≈ 10⁻⁴             B/op
+TickPathBench.bookRecompute:gc.count                8  avgt    5     ≈ 0           counts
+TickPathBench.engineTick                            4  avgt    5  76.571 ±  4.000   ns/op
+TickPathBench.engineTick:gc.alloc.rate              4  avgt    5   0.007 ±  0.001  MB/sec
+TickPathBench.engineTick:gc.alloc.rate.norm         4  avgt    5   0.001 ±  0.001    B/op
+TickPathBench.engineTick:gc.count                   4  avgt    5     ≈ 0           counts
+TickPathBench.engineTick                            8  avgt    5  81.991 ±  3.003   ns/op
+TickPathBench.engineTick:gc.alloc.rate              8  avgt    5   0.007 ±  0.001  MB/sec
+TickPathBench.engineTick:gc.alloc.rate.norm         8  avgt    5   0.001 ±  0.001    B/op
+TickPathBench.engineTick:gc.count                   8  avgt    5     ≈ 0           counts
+TickPathBench.ringRoundTrip                         4  avgt    5  11.752 ±  0.885   ns/op
+TickPathBench.ringRoundTrip:gc.alloc.rate           4  avgt    5   0.007 ±  0.001  MB/sec
+TickPathBench.ringRoundTrip:gc.alloc.rate.norm      4  avgt    5  ≈ 10⁻⁴             B/op
+TickPathBench.ringRoundTrip:gc.count                4  avgt    5     ≈ 0           counts
+TickPathBench.ringRoundTrip                         8  avgt    5  11.575 ±  1.040   ns/op
+TickPathBench.ringRoundTrip:gc.alloc.rate           8  avgt    5   0.006 ±  0.001  MB/sec
+TickPathBench.ringRoundTrip:gc.alloc.rate.norm      8  avgt    5  ≈ 10⁻⁴             B/op
+TickPathBench.ringRoundTrip:gc.count                8  avgt    5     ≈ 0           counts
+
+Benchmark result is saved to results/local/jmh.json

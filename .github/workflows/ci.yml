@@ -1,0 +1,72 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/fxstream
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env: { POSTGRES_USER: fxstream, POSTGRES_PASSWORD: fxstream, POSTGRES_DB: fxstream }
+        ports: ["5432:5432"]
+        options: --health-cmd "pg_isready -U fxstream" --health-interval 2s --health-retries 30
+      mongo:
+        image: mongo:7
+        ports: ["27017:27017"]
+        options: --health-cmd "mongosh --quiet --eval 'db.runCommand({ping:1})'" --health-interval 2s --health-retries 30
+      rabbitmq:
+        image: rabbitmq:3.13
+        ports: ["5672:5672"]
+        options: --health-cmd "rabbitmq-diagnostics -q ping" --health-interval 3s --health-retries 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: "21", cache: maven }
+      - name: Unit + full-stack tests (real Postgres, MongoDB, RabbitMQ)
+        run: mvn -B -ntp verify
+
+  bench:
+    needs: test
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env: { POSTGRES_USER: fxstream, POSTGRES_PASSWORD: fxstream, POSTGRES_DB: fxstream }
+        ports: ["5432:5432"]
+        options: --health-cmd "pg_isready -U fxstream" --health-interval 2s --health-retries 30
+      mongo:
+        image: mongo:7
+        ports: ["27017:27017"]
+        options: --health-cmd "mongosh --quiet --eval 'db.runCommand({ping:1})'" --health-interval 2s --health-retries 30
+      rabbitmq:
+        image: rabbitmq:3.13
+        ports: ["5672:5672"]
+        options: --health-cmd "rabbitmq-diagnostics -q ping" --health-interval 3s --health-retries 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: "21", cache: maven }
+      - run: mvn -B -ntp -DskipTests install
+      - name: Benchmarks, expiry check, broker chaos (+ idempotency-off control)
+        env:
+          OUT: results/ci
+          JDBC: jdbc:postgresql://localhost:5432/fxstream
+          RATES: "1000,5000,10000,20000"
+          RESTART_CMD: bash scripts/broker-crash-ci.sh
+          KILL_EVERY_MS: "12000"
+          CHAOS_KILLS: "6"
+        run: |
+          nproc; free -m
+          bash scripts/bench-all.sh
+          cat results/ci/SUMMARY.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: results-ci, path: results/ }

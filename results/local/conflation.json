@@ -1,0 +1,31 @@
+{
+  "stream_ticks_per_s" : 1000.0,
+  "client_capacity_per_s" : 50,
+  "seconds" : 20,
+  "conflated" : {
+    "received" : 628,
+    "max_queue_depth" : 1,
+    "ends_on_latest_price" : true,
+    "last_seq_published" : 96979,
+    "last_seq_received" : 96979,
+    "price_age_seen_by_client" : {
+      "count" : 628,
+      "min_ms" : 0.9,
+      "p50_ms" : 1.6,
+      "p99_ms" : 5.3,
+      "max_ms" : 40.8
+    }
+  },
+  "plain" : {
+    "price_age_seen_by_client" : {
+      "count" : 676,
+      "min_ms" : 12.1,
+      "p50_ms" : 10343.2,
+      "p99_ms" : 20535.3,
+      "max_ms" : 20719.9
+    },
+    "received" : 676,
+    "max_queue_depth" : 13761,
+    "backlog_at_end" : 13783
+  }
+}

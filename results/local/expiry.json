@@ -1,0 +1,15 @@
+{
+  "quotes" : 1000,
+  "ttl_ms" : 200,
+  "trade_delay" : "uniform 0..400 ms after the quote",
+  "rows" : 1000,
+  "late_requests" : 610,
+  "late_rejected_expired" : 610,
+  "late_filled" : 0,
+  "on_time_wrongly_rejected_expired" : 0,
+  "pct_late_rejected" : 100.0,
+  "breakdown" : {
+    "on_time FILLED" : 390,
+    "late REJECTED REJECTED_EXPIRED" : 610
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "stale_threshold_ms" : 200,
+  "trials" : 20,
+  "last_tick_to_exclusion" : {
+    "count" : 20,
+    "min_ms" : 202.4,
+    "p50_ms" : 202.8,
+    "p99_ms" : 203.4,
+    "max_ms" : 203.4
+  },
+  "note" : "includes FIX + broker transit of the final price; threshold is the service's fx.stale-ms"
+}

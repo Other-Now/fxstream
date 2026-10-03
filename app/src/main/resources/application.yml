@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: fxstream
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fxstream
+    username: fxstream
+    password: fxstream
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate          # Flyway owns the schema
+    properties:
+      hibernate.jdbc.time_zone: UTC
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/fxstream
+      auto-index-creation: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirm-type: correlated
+    connection-timeout: 2s
+
+server:
+  port: 8090
+
+fx:
+  fix-port: 9878
+  max-lps: 8
+  stale-ms: 200
+  ring-capacity: 4096
+  snapshot-ms: 1000
+  quote-ttl-ms: 1000
+  max-quote-ttl-ms: 120000
+  tolerance-tenth-pips: 10      # 1 pip
+  idempotent: true
+  client-tiers:
+    acme: 0
+    globex: 1
+    initech: 2
+
+logging:
+  level:
+    quickfix: warn
+    quickfixj: warn

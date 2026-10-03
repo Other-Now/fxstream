@@ -1,0 +1,14 @@
+{
+  "producers" : 4,
+  "pairs" : 4,
+  "seconds" : 30,
+  "ticks" : 181013094,
+  "ticks_per_s" : 6033752,
+  "book_changes" : 19376104,
+  "gc_collections" : 0,
+  "gc_time_ms" : 0,
+  "heap_used_growth_bytes" : 0,
+  "ring_full_spins" : 933479638,
+  "jvm" : "OpenJDK 64-Bit Server VM 21.0.12.1",
+  "cpus" : 4
+}

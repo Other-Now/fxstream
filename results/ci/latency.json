@@ -1,0 +1,152 @@
+{
+  "note" : "latency measured from each tick's scheduled send time; price = tier-0 stream; same host",
+  "runs" : [ {
+    "ticks_per_s" : 1000.0,
+    "lps" : 4,
+    "pairs" : 4,
+    "seconds" : 30,
+    "tick_to_client_price" : {
+      "count" : 22595,
+      "p50_us" : 510.7,
+      "p90_us" : 850.9,
+      "p99_us" : 11763.7,
+      "p99_9_us" : 51806.2,
+      "max_us" : 69926.9
+    },
+    "harness_sender_lag" : {
+      "count" : 30001,
+      "p50_us" : 14.4,
+      "p90_us" : 21.0,
+      "p99_us" : 139.8,
+      "p99_9_us" : 912.4,
+      "max_us" : 2560.0
+    },
+    "service" : {
+      "fixQuotes" : 30114,
+      "fixRejected" : 0,
+      "engineTicks" : 30114,
+      "bookChanges" : 22677,
+      "crossedSkipped" : 4,
+      "ringFullSpins" : 0,
+      "pricesPublished" : 68031,
+      "pricesDropped" : 0,
+      "tradesFilled" : 0,
+      "tradesRejected" : 0,
+      "tradesReplayed" : 0,
+      "tradeInsertRacesCaught" : 0,
+      "tradeRequestsDeadLettered" : 0,
+      "tradeRequestsRetried" : 0
+    }
+  }, {
+    "ticks_per_s" : 5000.0,
+    "lps" : 4,
+    "pairs" : 4,
+    "seconds" : 30,
+    "tick_to_client_price" : {
+      "count" : 89006,
+      "p50_us" : 1122.3,
+      "p90_us" : 73531.4,
+      "p99_us" : 232128.5,
+      "p99_9_us" : 320864.3,
+      "max_us" : 372768.8
+    },
+    "harness_sender_lag" : {
+      "count" : 150001,
+      "p50_us" : 18.0,
+      "p90_us" : 144.5,
+      "p99_us" : 884.2,
+      "p99_9_us" : 4235.3,
+      "max_us" : 12410.9
+    },
+    "service" : {
+      "fixQuotes" : 150021,
+      "fixRejected" : 0,
+      "engineTicks" : 150021,
+      "bookChanges" : 88816,
+      "crossedSkipped" : 1,
+      "ringFullSpins" : 0,
+      "pricesPublished" : 266448,
+      "pricesDropped" : 0,
+      "tradesFilled" : 0,
+      "tradesRejected" : 0,
+      "tradesReplayed" : 0,
+      "tradeInsertRacesCaught" : 0,
+      "tradeRequestsDeadLettered" : 0,
+      "tradeRequestsRetried" : 0
+    }
+  }, {
+    "ticks_per_s" : 10000.0,
+    "lps" : 4,
+    "pairs" : 4,
+    "seconds" : 30,
+    "tick_to_client_price" : {
+      "count" : 136092,
+      "p50_us" : 281280.5,
+      "p90_us" : 820510.7,
+      "p99_us" : 1246756.9,
+      "p99_9_us" : 1373634.6,
+      "max_us" : 1394606.1
+    },
+    "harness_sender_lag" : {
+      "count" : 300002,
+      "p50_us" : 12.9,
+      "p90_us" : 218.8,
+      "p99_us" : 2353.2,
+      "p99_9_us" : 12419.1,
+      "max_us" : 27017.2
+    },
+    "service" : {
+      "fixQuotes" : 300046,
+      "fixRejected" : 0,
+      "engineTicks" : 300048,
+      "bookChanges" : 134587,
+      "crossedSkipped" : 0,
+      "ringFullSpins" : 0,
+      "pricesPublished" : 403761,
+      "pricesDropped" : 0,
+      "tradesFilled" : 0,
+      "tradesRejected" : 0,
+      "tradesReplayed" : 0,
+      "tradeInsertRacesCaught" : 0,
+      "tradeRequestsDeadLettered" : 0,
+      "tradeRequestsRetried" : 0
+    }
+  }, {
+    "ticks_per_s" : 20000.0,
+    "lps" : 4,
+    "pairs" : 4,
+    "seconds" : 30,
+    "tick_to_client_price" : {
+      "count" : 142469,
+      "p50_us" : 1866465.3,
+      "p90_us" : 2600468.5,
+      "p99_us" : 3170893.8,
+      "p99_9_us" : 3250585.6,
+      "max_us" : 3284140.0
+    },
+    "harness_sender_lag" : {
+      "count" : 600013,
+      "p50_us" : 10.8,
+      "p90_us" : 731.6,
+      "p99_us" : 5656.6,
+      "p99_9_us" : 17678.3,
+      "max_us" : 29851.6
+    },
+    "service" : {
+      "fixQuotes" : 600244,
+      "fixRejected" : 0,
+      "engineTicks" : 600249,
+      "bookChanges" : 152771,
+      "crossedSkipped" : 93,
+      "ringFullSpins" : 0,
+      "pricesPublished" : 458311,
+      "pricesDropped" : 0,
+      "tradesFilled" : 0,
+      "tradesRejected" : 0,
+      "tradesReplayed" : 0,
+      "tradeInsertRacesCaught" : 0,
+      "tradeRequestsDeadLettered" : 0,
+      "tradeRequestsRetried" : 0
+    }
+  } ]
+}

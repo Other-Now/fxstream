@@ -30,27 +30,33 @@ JPA/Hibernate + Flyway on PostgreSQL 16, Spring Data MongoDB, JUnit 5, JMH, HdrH
 
 All numbers come from `scripts/bench-all.sh`. CI runs the same script on Linux and publishes the
 results in the job summary. The local run was on an 8-thread Windows laptop with RabbitMQ in WSL2. That
-setup adds about 0.5 ms per broker hop, so prefer the CI numbers for absolute latency.
-Local raw results: [`results/local/`](results/local/SUMMARY.md).
+setup adds about 0.5 ms per broker hop, so latency is shown for both environments.
+Raw results: [`results/local/`](results/local/SUMMARY.md), [`results/ci/`](results/ci/SUMMARY.md).
 
-| What | Result (local) |
-|---|---|
-| Tick path: ring → book → 3 tiers priced (JMH) | **77–82 ns/tick**, **≈0 B/op** allocated |
-| Ring round trip / book recompute (JMH) | 11.8 ns / 27–35 ns (4–8 LPs) |
-| Core soak, no I/O, 30 s | **20.9M ticks/s** across 4 pair threads, **0 GCs**, 0 B heap growth |
-| LP tick (FIX) → client price (RabbitMQ), 1k ticks/s, 4 LPs × 4 pairs | p50 **0.82 ms**, p99 1.9 ms (bare broker hop alone: p50 0.50 ms) |
-| Stale LP excluded (200 ms threshold), 20 trials | 202.4–203.4 ms after its last tick |
-| Slow consumer (50/s on a 1k/s stream), conflated queue | depth never above **1**, prices seen 1.6 ms old (p50), ends on the latest price |
-| Same consumer, plain queue | backlog **13,783**, prices seen **10.3 s** old (p50) |
-| 1,000 quotes (200 ms TTL) traded 0–400 ms later | 610 late → **610 rejected (100%)**, 0 late fills, 0 on-time wrongly rejected |
-| 15,000 trades, broker `kill -9` ×5 | **0 lost, 0 duplicate rows, 0 double fills**; 30 redeliveries absorbed |
-| Same, idempotency off (control) | 57 duplicate rows, **36 double fills**, 20 orders both FILLED and REJECTED |
+| What | Local (8-thread Windows, broker in WSL2) | CI (GitHub Actions, 4 vCPU Linux) |
+|---|---|---|
+| Tick path: ring → book → 3 tiers priced (JMH) | **77–82 ns/tick**, ≈0 B/op | **52–60 ns/tick**, ≈0 B/op |
+| Ring round trip / book recompute (JMH) | 11.8 ns / 27–35 ns | 8.1–8.4 ns / 22–38 ns |
+| Core soak, no I/O, 30 s | 20.9M ticks/s, **0 GCs** | 6.0M ticks/s (4 CPUs), **0 GCs** |
+| LP tick (FIX) → client price (RabbitMQ), 1k ticks/s | p50 **0.82 ms**, p99 1.9 ms | p50 **0.51 ms**, p99 11.8 ms |
+| Bare broker hop, 1k msgs/s (baseline) | p50 0.50 ms, p99 0.93 ms | p50 0.29 ms, p99 329 ms (noisy runner) |
+| Stale LP excluded (200 ms threshold), 20 trials | 202.4–203.4 ms | 200.7–202.9 ms |
+| Slow consumer, conflated queue | depth ≤ **1**, prices 1.6 ms old, ends on latest | depth ≤ **1**, prices 1.3 ms old, ends on latest |
+| Same consumer, plain queue | backlog 13,783, prices **10.3 s** old | backlog 14,809, prices **10.1 s** old |
+| 1,000 quotes (200 ms TTL) traded 0–400 ms later | 610/610 late rejected, 0 wrong | 534/534 late rejected, 0 wrong |
+| 15,000 trades through broker `kill -9`s | 5 kills: **0 lost, 0 duplicated** | 6 kills: **0 lost, 0 duplicated** |
+| Same, idempotency off (control) | 57 dup rows, 36 double fills, 20 conflicting | 16 dup rows, 10 conflicting outcomes |
+
+CI run with all results in the job summary: [37134138991](https://github.com/Other-Now/fxstream/actions/runs/37134138991).
 
 Notes on the numbers:
 
 - **Latency is measured from each tick's *scheduled* send time**, so stalls in the sender or the
   system count as latency (coordinated omission). The harness reports its own sender lag next to the
   result.
+- **Tail latency on both machines is set by the box, not the engine.** Everything shares one host:
+  4 vCPUs in CI and 8 threads locally, running the LPs, the service, the broker, Postgres and MongoDB.
+  The bare-broker baseline shows the same tails. The p50s and the JMH/soak numbers are the stable ones.
 - **Above about 5k ticks/s, local latency is set by the broker hop.** Each book change is 3 tier
   messages, so 10k ticks/s is about 15k msgs/s. The bare-broker baseline in WSL2 hits the same wall at
   that rate (p99 40 ms at 15k msgs/s).
